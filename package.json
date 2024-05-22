@@ -1,5 +1,5 @@
 {
-  "name": "arts_app",
+  "name": "artisanalley",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "jquery": "^3.7.1",
+    "next": "14.2.3",
     "react": "^18",
+    "react-countup": "^6.5.3",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "swiper": "^11.1.1"
   },
   "devDependencies": {
     "postcss": "^8",

@@ -1,113 +1,358 @@
-import Image from "next/image";
+import Link from "next/link";
+import { link } from "./lib/links";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+    <>
+      <section
+        id="hero"
+        className="d-flex justify-content-center align-items-center"
+      >
+        <div
+          id="heroCarousel"
+          className="container carousel carousel-fade"
+          data-bs-ride="carousel"
+          data-bs-interval="5000"
+        >
+          {/* Slide 1  */}
+          <div className="carousel-item active">
+            <div className="carousel-container">
+              <h2 className="animate__animated animate__fadeInDown">
+                Welcome to <span>ArtisanAlley</span>
+              </h2>
+              <p className="animate__animated animate__fadeInUp">
+                Welcome to ArtisanAlley, a vibrant online community where
+                artists from around the globe come together to showcase their
+                work, connect with like-minded creatives, and explore the
+                endless possibilities of the artistic world. Whether you're a
+                painter, sculptor, photographer, or digital artist, ArtisanAlley
+                is your platform to shine, share, and grow.
+              </p>
+              <Link
+                href={link.ABOUT}
+                className="btn-get-started animate__animated animate__fadeInUp"
+              >
+                Read More
+              </Link>
+            </div>
+          </div>
+          {/* Slide 2  */}
+          <div className="carousel-item">
+            <div className="carousel-container">
+              <h2 className="animate__animated animate__fadeInDown">
+                Our Mission
+              </h2>
+              <p className="animate__animated animate__fadeInUp">
+                At ArtisanAlley, we believe in the transformative power of art.
+                Our mission is to create a supportive and dynamic space where
+                artists can present their creations, gain inspiration from
+                others, and engage with an audience that appreciates the value
+                of handcrafted beauty. We aim to bridge the gap between artists
+                and art lovers, fostering a community that celebrates creativity
+                in all its forms.
+              </p>
+              <Link
+                href={link.ABOUT}
+                className="btn-get-started animate__animated animate__fadeInUp"
+              >
+                Read More
+              </Link>
+            </div>
+          </div>
+
+          {/* <Slide 3 */}
+          <div className="carousel-item">
+            <div className="carousel-container">
+              <h2 className="animate__animated animate__fadeInDown">
+                Join ArtisanAlley Today{" "}
+              </h2>
+              <p className="animate__animated animate__fadeInUp">
+                Become a part of our thriving artistic community. Signing up is
+                simple and free. Whether you're here to showcase your work, find
+                inspiration, or connect with other artists, ArtisanAlley is the
+                place for you. Join us and start your creative adventure today!
+              </p>
+              <Link
+                href={link.ABOUT}
+                className="btn-get-started animate__animated animate__fadeInUp"
+              >
+                Read More
+              </Link>
+            </div>
+          </div>
           <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="carousel-control-prev"
+            href="#heroCarousel"
+            role="button"
+            data-bs-slide="prev"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+            <span
+              className="carousel-control-prev-icon bx bx-chevron-left"
+              aria-hidden="true"
+            ></span>
+          </a>
+
+          <a
+            className="carousel-control-next"
+            href="#heroCarousel"
+            role="button"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon bx bx-chevron-right"
+              aria-hidden="true"
+            ></span>
           </a>
         </div>
-      </div>
+      </section>
+      <main id="main">
+        <section className="services">
+          <div className="container">
+            <div className="row">
+              <div
+                className="col-md-6 col-lg-3 d-flex align-items-stretch"
+                data-aos="fade-up"
+              >
+                <div className="icon-box icon-box-pink">
+                  <div className="icon">
+                    <i className="bx bxl-dribbble"></i>
+                  </div>
+                  <h4 className="title">
+                    <a href="">Showcase Your Work</a>
+                  </h4>
+                  <p className="description">
+                    Create your own personalized gallery to exhibit your art.
+                    Upload high-quality images, add detailed descriptions, and
+                    share the stories behind your masterpieces.
+                  </p>
+                </div>
+              </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+              <div
+                className="col-md-6 col-lg-3 d-flex align-items-stretch"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div className="icon-box icon-box-cyan">
+                  <div className="icon">
+                    <i className="bx bx-file"></i>
+                  </div>
+                  <h4 className="title">
+                    <a href="">Connect with Artists</a>
+                  </h4>
+                  <p className="description">
+                    Join a diverse community of artists from around the world.
+                    Participate in forums, engage in discussions, and
+                    collaborate on projects.
+                  </p>
+                </div>
+              </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+              <div
+                className="col-md-6 col-lg-3 d-flex align-items-stretch"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div className="icon-box icon-box-green">
+                  <div className="icon">
+                    <i className="bx bx-tachometer"></i>
+                  </div>
+                  <h4 className="title">
+                    <a href="">Art Marketplace</a>
+                  </h4>
+                  <p className="description">
+                    Turn your passion into a profession with our Art
+                    Marketplace. Sell your artwork directly to buyers who
+                    appreciate the uniqueness and quality of handcrafted pieces.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                className="col-md-6 col-lg-3 d-flex align-items-stretch"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div className="icon-box icon-box-blue">
+                  <div className="icon">
+                    <i className="bx bx-world"></i>
+                  </div>
+                  <h4 className="title">
+                    <a href="">Events and Workshops</a>
+                  </h4>
+                  <p className="description">
+                    Stay informed about upcoming art events, exhibitions, and
+                    workshops. Learn new skills, gain fresh perspectives, and
+                    keep up with the latest trends in the art world.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="why-us section-bg"
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6 video-box">
+                <img src="assets/img/why-us.jpg" className="img-fluid" alt="" />
+                <a
+                  href="https://www.youtube.com/watch?v=jDDaplaOz7Q"
+                  className="venobox play-btn mb-4"
+                  data-vbtype="video"
+                  data-autoplay="true"
+                ></a>
+              </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+              <div className="col-lg-6 d-flex flex-column justify-content-center p-5">
+                <div className="icon-box">
+                  <div className="icon">
+                    <i className="bx bx-fingerprint"></i>
+                  </div>
+                  <h4 className="title">
+                    <a href="">Inspiration Hub</a>
+                  </h4>
+                  <p className="description">
+                    Get inspired by exploring our curated collections, artist
+                    spotlights, and thematic galleries. Discover new techniques,
+                    styles, and mediums that can fuel your own creative journey.
+                  </p>
+                </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+                <div className="icon-box">
+                  <div className="icon">
+                    <i className="bx bx-gift"></i>
+                  </div>
+                  <h4 className="title">
+                    <a href="">Join ArtisanAlley</a>
+                  </h4>
+                  <p className="description">
+                    Become a part of our thriving artistic community. Signing up
+                    is simple and free. Whether you're here to showcase your
+                    work, find inspiration, or connect with other artists,
+                    ArtisanAlley is the place for you.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <section className="features">
+          <div className="container">
+            <div className="section-title">
+              <h2>Features</h2>
+              <p>
+                ArtisanAlley offers a multitude of features designed to help
+                artists grow, connect, and succeed. Explore what we have to
+                offer and find the perfect tools to elevate your artistic
+                journey.
+              </p>
+            </div>
+
+            <div className="row" data-aos="fade-up">
+              <div className="col-md-5">
+                <img
+                  src="assets/img/features-1.svg"
+                  className="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div className="col-md-7 pt-4">
+                <h3>Personalized Galleries</h3>
+                <p className="fst-italic">
+                  Create stunning galleries to showcase your art. Add detailed
+                  descriptions and stories to engage your audience.
+                </p>
+                <ul>
+                  <li>
+                    <i className="bi bi-check"></i> High-quality image uploads.
+                  </li>
+                  <li>
+                    <i className="bi bi-check"></i> Easy gallery management.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="row" data-aos="fade-up">
+              <div className="col-md-5 order-1 order-md-2">
+                <img
+                  src="assets/img/features-2.svg"
+                  className="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div className="col-md-7 pt-5 order-2 order-md-1">
+                <h3>Community Forums</h3>
+                <p className="fst-italic">
+                  Engage in lively discussions, share tips, and collaborate on
+                  projects with artists from around the world.
+                </p>
+                <p>
+                  Join forums based on your interests, ask questions, and get
+                  feedback from the community.
+                </p>
+              </div>
+            </div>
+
+            <div className="row" data-aos="fade-up">
+              <div className="col-md-5">
+                <img
+                  src="assets/img/features-3.svg"
+                  className="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div className="col-md-7 pt-5">
+                <h3>Art Marketplace</h3>
+                <p>
+                  Sell your artwork directly to buyers who appreciate
+                  handcrafted pieces. Manage your sales and track orders with
+                  ease.
+                </p>
+                <ul>
+                  <li>
+                    <i className="bi bi-check"></i> Secure transactions.
+                  </li>
+                  <li>
+                    <i className="bi bi-check"></i> Reach a global audience.
+                  </li>
+                  <li>
+                    <i className="bi bi-check"></i> Easy order management.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="row" data-aos="fade-up">
+              <div className="col-md-5 order-1 order-md-2">
+                <img
+                  src="assets/img/features-4.svg"
+                  className="img-fluid"
+                  alt=""
+                />
+              </div>
+              <div className="col-md-7 pt-5 order-2 order-md-1">
+                <h3>Events and Workshops</h3>
+                <p className="fst-italic">
+                  Stay updated on the latest art events, exhibitions, and
+                  workshops. Learn new skills and connect with other artists.
+                </p>
+                <p>
+                  Whether you want to attend a local gallery opening or join an
+                  online art class, our events calendar has something for
+                  everyone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
